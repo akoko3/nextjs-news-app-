@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 
-const API_KEY = process.env.NEXT_PUBLIC_NEWS_API_KEY;
 const PAGE_SIZE = 10; // Number of articles per page
 
 // Define Type for an Article
@@ -115,6 +114,7 @@ export default function NewsApp() {
               <div key={index} className="featured-item">
                 <Link href={`/news/${encodeURIComponent(article.title)}`}>
                   {article.urlToImage && (
+                    
                     <img src={article.urlToImage} alt={article.title} width="100" />
                   )}
                   <h3>{article.title}</h3>
